@@ -1,62 +1,301 @@
-/* styles.css */
+/* Jobu — styles.css
+   Responsive, modern UI, gradient buttons, simple utility classes.
+   Put this file in css/styles.css
+*/
+
+:root {
+    --bg-1: #071422;
+    --bg-2: #06121a;
+    --card: rgba(255, 255, 255, 0.025);
+    --muted: #98a3b3;
+    --accent-1: #7c3aed;
+    --accent-2: #06b6d4;
+    --accent-3: #f97316;
+    --glass: rgba(255, 255, 255, 0.03);
+    --white: #eef2ff;
+    --radius: 14px;
+    --maxw: 1150px;
+}
+
+* {
+    box-sizing: border-box
+}
+
+html,
+body {
+    height: 100%
+}
 
 body {
     margin: 0;
-    font-family: Arial, sans-serif;
-    background: linear-gradient(135deg, #4f46e5, #9333ea);
-    color: #fff;
+    font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    background: linear-gradient(180deg, var(--bg-1) 0%, var(--bg-2) 100%);
+    color: var(--white);
+    -webkit-font-smoothing: antialiased;
+    padding-bottom: 48px;
 }
 
-/* Navbar */
+/* layout wrappers */
+.wrap {
+    max-width: var(--maxw);
+    margin: 0 auto;
+    padding: 20px
+}
+
 .topbar {
-    background: rgba(0, 0, 0, 0.6);
-    padding: 1rem 2rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.03)
+}
+
+.topbar .wrap {
     display: flex;
-    justify-content: space-between;
     align-items: center;
+    justify-content: space-between
 }
 
-.topbar .brand-title {
-    font-size: 1.5rem;
-    font-weight: bold;
-}
-
-/* Nav links */
-.nav a {
-    color: #fff;
-    margin: 0 10px;
+/* brand */
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
     text-decoration: none;
-    font-weight: 500;
+    color: inherit
 }
 
-.nav a:hover {
-    text-decoration: underline;
+.logo {
+    height: 44px;
+    width: auto;
+    border-radius: 8px
 }
 
-/* Buttons */
+.brand-title {
+    font-weight: 700
+}
+
+/* nav */
+.nav a {
+    margin-left: 12px;
+    text-decoration: none;
+    color: var(--white);
+    font-weight: 600
+}
+
+.nav-user {
+    display: flex;
+    gap: 10px;
+    align-items: center
+}
+
 .btn {
-    padding: 8px 14px;
-    border-radius: 6px;
-    border: none;
+    border: 0;
+    padding: 10px 14px;
+    border-radius: 12px;
     cursor: pointer;
-    font-weight: bold;
+    font-weight: 700;
+    background: transparent;
+    color: var(--white)
 }
 
+.btn.small {
+    padding: 6px 8px;
+    border-radius: 8px
+}
+
+.btn-outline {
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.06)
+}
+
+/* gradient button */
 .btn-gradient {
-    background: linear-gradient(90deg, #06b6d4, #3b82f6, #9333ea);
-    color: white;
-    transition: transform 0.2s ease-in-out;
+    background: linear-gradient(90deg, var(--accent-1), var(--accent-2));
+    background-size: 200% 100%;
+    transition: transform .12s ease, background-position .8s ease, box-shadow .12s ease;
+    box-shadow: 0 8px 24px rgba(124, 58, 237, 0.12);
 }
 
 .btn-gradient:hover {
-    transform: scale(1.05);
+    transform: translateY(-3px);
+    background-position: 100% 0
 }
 
-/* Responsive */
-@media (max-width: 768px) {
-    .nav {
-        display: flex;
-        flex-direction: column;
-        gap: 10px;
+/* main grid */
+.main-grid {
+    display: grid;
+    grid-template-columns: 1fr 360px;
+    gap: 22px;
+    padding-top: 20px
+}
+
+@media (max-width:980px) {
+    .main-grid {
+        grid-template-columns: 1fr
     }
+}
+
+.card {
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.02), rgba(255, 255, 255, 0.01));
+    border-radius: var(--radius);
+    padding: 18px;
+    box-shadow: 0 10px 30px rgba(2, 6, 23, 0.6)
+}
+
+/* hero */
+.hero h1 {
+    margin: 0 0 8px 0;
+    font-size: 22px
+}
+
+.muted {
+    color: var(--muted)
+}
+
+.section-title {
+    margin-top: 16px
+}
+
+/* search row */
+.search-row {
+    display: flex;
+    gap: 8px;
+    margin: 12px 0
+}
+
+.input {
+    flex: 1;
+    padding: 12px;
+    border-radius: 12px;
+    border: 0;
+    background: rgba(255, 255, 255, 0.02);
+    color: var(--white);
+    outline: none
+}
+
+.textarea {
+    width: 100%;
+    min-height: 120px;
+    padding: 12px;
+    border-radius: 10px;
+    border: 0;
+    background: rgba(255, 255, 255, 0.02);
+    color: var(--white)
+}
+
+/* grid for job cards */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px
+}
+
+@media (max-width:1100px) {
+    .grid {
+        grid-template-columns: repeat(2, 1fr)
+    }
+}
+
+@media (max-width:640px) {
+    .grid {
+        grid-template-columns: 1fr
+    }
+}
+
+.jobs-grid .card {
+    padding: 12px
+}
+
+.job-card h3 {
+    margin: 0 0 6px 0
+}
+
+/* sidebar specifics */
+.sidebar .ai-output {
+    margin-top: 12px;
+    padding: 12px;
+    min-height: 80px
+}
+
+/* Skills and pills */
+.skills {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin-top: 10px
+}
+
+.pill {
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0.02), rgba(255, 255, 255, 0.01));
+    padding: 8px 10px;
+    border-radius: 999px;
+    font-weight: 700
+}
+
+/* forms */
+.form-wrap {
+    display: flex;
+    justify-content: center;
+    padding-top: 40px
+}
+
+.form-card {
+    width: 100%;
+    max-width: 420px
+}
+
+.form-card .input {
+    margin: 10px 0;
+    display: block;
+    width: 100%
+}
+
+/* plans */
+.plans-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+    margin-top: 22px
+}
+
+@media (max-width:900px) {
+    .plans-grid {
+        grid-template-columns: 1fr
+    }
+}
+
+.plan-card {
+    padding: 20px;
+    text-align: center
+}
+
+.plan-card .price {
+    font-size: 20px;
+    font-weight: 800;
+    margin: 12px 0
+}
+
+.plan-card.featured {
+    transform: scale(1.03);
+    border: 1px solid rgba(255, 255, 255, 0.06)
+}
+
+/* footer */
+.footer {
+    margin-top: 36px;
+    padding: 20px 0;
+    text-align: center;
+    color: var(--muted);
+    font-size: 13px
+}
+
+/* small helpers */
+.center {
+    text-align: center
+}
+
+.small {
+    font-size: 13px
+}
+
+.row {
+    display: flex;
+    align-items: center
 }
