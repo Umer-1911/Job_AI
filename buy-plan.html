@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Buy Plan — Jobu</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="wrap">
+      <a class="brand" href="index.html">
+        <img src="assets/logo.png" alt="Jobu logo" class="logo" onerror="this.style.display='none'">
+        <span class="brand-title">Jobu</span>
+      </a>
+      <nav class="nav">
+        <a href="index.html">Home</a>
+        <a id="nav-login2" class="btn btn-gradient" href="login.html">Login</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="wrap plans-wrap">
+    <h1 class="center">Choose your monthly plan</h1>
+    <p class="muted center">Competitive pricing for students & juniors — lorem ipsum</p>
+
+    <div class="plans-grid">
+      <div class="card plan-card">
+        <h3>Basic</h3>
+        <p class="muted">AI job suggestions</p>
+        <div class="price">$4.99 / month</div>
+        <button class="btn btn-outline subscribe" data-plan="basic">Subscribe</button>
+      </div>
+
+      <div class="card plan-card featured">
+        <h3>Pro</h3>
+        <p class="muted">Jobs + learning paths</p>
+        <div class="price">$9.99 / month</div>
+        <button class="btn btn-gradient subscribe" data-plan="pro">Subscribe</button>
+      </div>
+
+      <div class="card plan-card">
+        <h3>Premium</h3>
+        <p class="muted">Priority AI access</p>
+        <div class="price">$14.99 / month</div>
+        <button class="btn btn-outline subscribe" data-plan="premium">Subscribe</button>
+      </div>
+    </div>
+
+    <p class="muted center small">For the demo, subscription actions will either call a server endpoint or use a local demo flow.</p>
+  </main>
+
+  <script src="js/app.js" defer></script>
+</body>
+</html>
