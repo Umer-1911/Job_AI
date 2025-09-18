@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Jobu — AI Job Matching & Skills</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="wrap">
+      <a class="brand" href="index.html">
+        <img src="assets/logo.png" alt="Jobu logo" class="logo" onerror="this.style.display='none'">
+        <span class="brand-title">Jobu</span>
+      </a>
+
+      <nav class="nav">
+        <a href="index.html">Home</a>
+        <a href="buy-plan.html">Buy Plan</a>
+        <span id="nav-logged" class="nav-user" style="display:none">
+          <span id="nav-username"></span>
+          <button id="logoutBtn" class="btn small">Logout</button>
+        </span>
+        <a id="nav-login" class="btn btn-gradient" href="login.html">Login</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="wrap main-grid">
+    <section class="hero card">
+      <h1>Find jobs matched to your skills — powered by AI</h1>
+      <p class="muted">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Use the AI assistant to refine your career path.</p>
+
+      <div class="search-row">
+        <input id="q" class="input" placeholder="Try: cybersecurity, network engineer, frontend developer" />
+        <button id="searchBtn" class="btn btn-gradient">Search</button>
+      </div>
+
+      <h2 class="section-title">Suggested matches</h2>
+      <div id="job-results" class="grid jobs-grid">
+        <!-- JS will populate results -->
+      </div>
+    </section>
+
+    <aside class="sidebar card">
+      <h3>AI Career Assistant</h3>
+      <p class="muted">Ask Gemini for tailored job suggestions or skills to learn. (Demo — requires login for real calls)</p>
+
+      <textarea id="aiPrompt" class="textarea" placeholder="Paste your resume or ask: 'Which skills should I learn to be a network engineer?'">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</textarea>
+
+      <div class="row" style="gap:8px;">
+        <button id="aiBtn" class="btn btn-gradient">Generate</button>
+        <div id="aiStatus" class="muted">Not called</div>
+      </div>
+
+      <div id="aiOutput" class="card ai-output">Paste prompt and click <strong>Generate</strong>. Lorem ipsum dolor sit amet.</div>
+
+      <h4>Skill boosters</h4>
+      <div class="skills">
+        <span class="pill">Docker</span>
+        <span class="pill">Linux</span>
+        <span class="pill">Python</span>
+        <span class="pill">Networking</span>
+        <span class="pill">SAPUI5</span>
+      </div>
+    </aside>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap muted">© 2025 Jobu • Built for demo by Umer Khalid • Lorem ipsum</div>
+  </footer>
+
+  <script src="js/app.js" defer></script>
+</body>
+</html>
