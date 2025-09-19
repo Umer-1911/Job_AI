@@ -75,7 +75,7 @@ body {
 .nav a {
     margin-left: 12px;
     text-decoration: none;
-    color: var(--accent-1);
+    color: var(--white);
     font-weight: 600;
     transition: color 0.2s ease;
 }
