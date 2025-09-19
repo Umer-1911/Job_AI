@@ -118,7 +118,8 @@ body {
 
 .btn-gradient:hover {
     transform: translateY(-3px);
-    background-position: 100% 0
+    background-position: 100% 0;
+    color: white;
 }
 
 /* main grid */
