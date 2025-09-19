@@ -1,5 +1,6 @@
-/* Jobu — styles.css (Updated)
-   Clean white background, adjusted logo in navbar, modern gradient buttons
+/* Jobu — styles.css
+   Responsive, modern UI, gradient buttons, simple utility classes.
+   Put this file in css/styles.css
 */
 
 :root {
@@ -14,12 +15,12 @@
 }
 
 * {
-    box-sizing: border-box;
+    box-sizing: border-box
 }
 
 html,
 body {
-    height: 100%;
+    height: 100%
 }
 
 body {
@@ -35,10 +36,9 @@ body {
 .wrap {
     max-width: var(--maxw);
     margin: 0 auto;
-    padding: 20px;
+    padding: 20px
 }
 
-/* Topbar */
 .topbar {
     border-bottom: 1px solid #e5e7eb;
     background: #ffffff;
@@ -50,7 +50,7 @@ body {
 .topbar .wrap {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-between
 }
 
 /* brand */
@@ -64,35 +64,28 @@ body {
 
 .logo {
     height: 40px;
-    /* Adjusted for navbar */
     width: auto;
 }
 
 .brand-title {
-    font-weight: 700;
-    font-size: 18px;
+    font-weight: 700
 }
 
 /* nav */
 .nav a {
-    margin-left: 14px;
+    margin-left: 12px;
     text-decoration: none;
     color: var(--text);
     font-weight: 600;
     transition: color 0.2s ease;
 }
 
-.nav a:hover {
-    color: var(--accent-1);
-}
-
 .nav-user {
     display: flex;
     gap: 10px;
-    align-items: center;
+    align-items: center
 }
 
-/* buttons */
 .btn {
     border: 0;
     padding: 10px 14px;
@@ -105,7 +98,7 @@ body {
 
 .btn.small {
     padding: 6px 8px;
-    border-radius: 8px;
+    border-radius: 8px
 }
 
 .btn-outline {
@@ -120,25 +113,171 @@ body {
     background-size: 200% 100%;
     color: white;
     transition: transform .12s ease, background-position .8s ease, box-shadow .12s ease;
-    box-shadow: 0 6px 16px rgba(124, 58, 237, 0.15);
+    box-shadow: 0 8px 24px rgba(124, 58, 237, 0.12);
 }
 
 .btn-gradient:hover {
-    transform: translateY(-2px);
-    background-position: 100% 0;
+    transform: translateY(-3px);
+    background-position: 100% 0
 }
 
-/* Cards */
+/* main grid */
+.main-grid {
+    display: grid;
+    grid-template-columns: 1fr 360px;
+    gap: 22px;
+    padding-top: 20px
+}
+
+@media (max-width:980px) {
+    .main-grid {
+        grid-template-columns: 1fr
+    }
+}
+
 .card {
-    background: #ffffff;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.02), rgba(255, 255, 255, 0.01));
     border-radius: var(--radius);
     padding: 18px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 10px 30px rgba(2, 6, 23, 0.6)
 }
 
-/* Muted text */
+/* hero */
+.hero h1 {
+    margin: 0 0 8px 0;
+    font-size: 22px
+}
+
 .muted {
-    color: var(--muted);
+    color: var(--muted)
+}
+
+.section-title {
+    margin-top: 16px
+}
+
+/* search row */
+.search-row {
+    display: flex;
+    gap: 8px;
+    margin: 12px 0
+}
+
+.input {
+    flex: 1;
+    padding: 12px;
+    border-radius: 12px;
+    border: 0;
+    background: rgba(255, 255, 255, 0.02);
+    color: var(--white);
+    outline: none
+}
+
+.textarea {
+    width: 100%;
+    min-height: 120px;
+    padding: 12px;
+    border-radius: 10px;
+    border: 0;
+    background: rgba(255, 255, 255, 0.02);
+    color: var(--white)
+}
+
+/* grid for job cards */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px
+}
+
+@media (max-width:1100px) {
+    .grid {
+        grid-template-columns: repeat(2, 1fr)
+    }
+}
+
+@media (max-width:640px) {
+    .grid {
+        grid-template-columns: 1fr
+    }
+}
+
+.jobs-grid .card {
+    padding: 12px
+}
+
+.job-card h3 {
+    margin: 0 0 6px 0
+}
+
+/* sidebar specifics */
+.sidebar .ai-output {
+    margin-top: 12px;
+    padding: 12px;
+    min-height: 80px
+}
+
+/* Skills and pills */
+.skills {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin-top: 10px
+}
+
+.pill {
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0.02), rgba(255, 255, 255, 0.01));
+    padding: 8px 10px;
+    border-radius: 999px;
+    font-weight: 700
+}
+
+/* forms */
+.form-wrap {
+    display: flex;
+    justify-content: center;
+    padding-top: 40px
+}
+
+.form-card {
+    width: 100%;
+    max-width: 420px
+}
+
+.form-card .input {
+    margin: 10px 0;
+    display: block;
+    width: 100%
+}
+
+/* plans */
+.plans-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+    margin-top: 22px
+}
+
+@media (max-width:900px) {
+    .plans-grid {
+        grid-template-columns: 1fr
+    }
+}
+
+.plan-card {
+    padding: 20px;
+    text-align: center
+}
+
+.plan-card .price {
+    font-size: 20px;
+    font-weight: 800;
+    margin: 12px 0
+}
+
+.plan-card.featured {
+    transform: scale(1.03);
+    border: 1px solid rgba(255, 255, 255, 0.06)
 }
 
 /* Footer */
@@ -158,4 +297,18 @@ body {
         flex-direction: column;
         gap: 10px;
     }
+}
+
+/* small helpers */
+.center {
+    text-align: center
+}
+
+.small {
+    font-size: 13px
+}
+
+.row {
+    display: flex;
+    align-items: center
 }
