@@ -59,7 +59,7 @@ body {
     align-items: center;
     gap: 10px;
     text-decoration: none;
-    color: var(--text);
+    color: inherit;
 }
 
 .logo {
@@ -75,7 +75,7 @@ body {
 .nav a {
     margin-left: 12px;
     text-decoration: none;
-    color: var(--text);
+    color: var(--accent-1);
     font-weight: 600;
     transition: color 0.2s ease;
 }
@@ -169,7 +169,7 @@ body {
     border-radius: 12px;
     border: 0;
     background: rgba(255, 255, 255, 0.02);
-    color: var(--white);
+    color: var(--text);
     outline: none
 }
 
@@ -180,7 +180,7 @@ body {
     border-radius: 10px;
     border: 0;
     background: rgba(255, 255, 255, 0.02);
-    color: var(--white)
+    color: var(--text)
 }
 
 /* grid for job cards */
