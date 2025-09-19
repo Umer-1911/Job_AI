@@ -113,7 +113,7 @@ body {
     background-size: 200% 100%;
     color: white;
     transition: transform .12s ease, background-position .8s ease, box-shadow .12s ease;
-    box-shadow: 0 8px 24px rgba(124, 58, 237, 0.12);
+    box-shadow: 0 8px 24px rgb(255, 255, 255);
 }
 
 .btn-gradient:hover {
